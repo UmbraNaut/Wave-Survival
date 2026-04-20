@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e001c92bb67e7a446922e5e382eff95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  E1: {fileID: 8412874225561678502, guid: 9fb909c40979b1f45ad7b6a22a769095, type: 3}
+  E1: {fileID: 7198585783088301862, guid: 5824d94872f70eb478ad1637e0a3802f, type: 3}
   EBullet: {fileID: 8949846471627196329, guid: 60a6b8821faae1349abbfdb331a362a7, type: 3}
 --- !u!50 &-1446579675873885872
 Rigidbody2D:

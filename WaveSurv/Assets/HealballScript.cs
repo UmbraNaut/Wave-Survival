@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BasicEnemyArmScript : MonoBehaviour
+public class HealballScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,6 +11,13 @@ public class BasicEnemyArmScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.back * 30 * Time.deltaTime);
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("PBug"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

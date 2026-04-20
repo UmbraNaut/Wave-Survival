@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public Slider healthBar;
     private float decrement = 0.0f;
+    private float increment = 0.0f;
     private bool isin = false;
     void Start()
     {
@@ -25,8 +26,8 @@ public class Health : MonoBehaviour
         }
         if (currentHealth - (decrement + 0.01f) > healthBar.value)
         {
-            healthBar.value = healthBar.value - decrement;
-            healthBar.value -= Time.deltaTime;
+            healthBar.value = healthBar.value + increment;
+            healthBar.value += Time.deltaTime;
         }
         if (isin)
         {
@@ -39,6 +40,11 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
         decrement = (healthBar.value - currentHealth)/40;
     }
+    public void Heal(float healing)
+    {
+        currentHealth += healing;
+        increment = (currentHealth - healthBar.value) / 40;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
             if (other.CompareTag("Sent"))// Check if the object has the "Player" tag
@@ -47,7 +53,7 @@ public class Health : MonoBehaviour
             }
             if (other.CompareTag("Healer"))
             {
-            TakeDamage(-5);
+            Heal(5);
             }
             if (other.CompareTag("E1"))
             {
