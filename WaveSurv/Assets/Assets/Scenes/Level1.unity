@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d36ea1763c6a4845a02385e05686e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  E1: {fileID: 8412874225561678502, guid: 9fb909c40979b1f45ad7b6a22a769095, type: 3}
+  E1: {fileID: 7198585783088301862, guid: 5824d94872f70eb478ad1637e0a3802f, type: 3}
   E2: {fileID: 6997845339810074369, guid: d9d514c3735478a46beae889f3559fe0, type: 3}
   Sent: {fileID: 4866154773422833898, guid: a5b7afe8f8f99044794b37908b9fc66a, type: 3}
   ransom: 0
@@ -818,7 +818,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11.022213, y: 11.013333}
+  m_Size: {x: 110.23546, y: 110.130005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1424,6 +1424,7 @@ MonoBehaviour:
   bullet: {fileID: 506151371814430625, guid: 0e09521175eb3c8458bce89047b50cdf, type: 3}
   mine: {fileID: 3042574128426232790, guid: 7c6574ac48a3d64488dfe52f8843acdc, type: 3}
   heal: {fileID: 9152795174561563556, guid: 67e764fe8786ae445af6c5f1390bee2c, type: 3}
+  mitos: {fileID: 2728080949040821569, guid: 96760a6332bf09843af5bb42fd2c48d0, type: 3}
   healpref: {fileID: 3889098947354096310, guid: b8dfbbbadce17764bb21375fdfe33e16, type: 3}
   shotpoint: {fileID: 495064887}
 --- !u!4 &1249410406
@@ -1587,7 +1588,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 32.90661, y: 32.920002}
+  m_Size: {x: 10.968868, y: 10.973333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1680,7 +1681,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.781964, y: 9.8}
+  m_Size: {x: 11.232256, y: 11.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

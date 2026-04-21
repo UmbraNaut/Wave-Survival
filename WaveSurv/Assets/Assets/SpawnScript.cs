@@ -8,13 +8,14 @@ public class SpawnScript : MonoBehaviour
     public GameObject bullet;
     public GameObject mine;
     public GameObject heal;
+    public GameObject mitos;
     [SerializeField] private GameObject healpref;
     public static GameObject healer;
     public Transform shotpoint;
     private float coneter = 0;
     public static int deathcounter = 0;
     public static int healcount = 0;
-    private int type = 2;
+    private int type = 3;
     private int goal = 400;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -28,6 +29,8 @@ public class SpawnScript : MonoBehaviour
             goal = 600;
         else if (type == 2)
             goal = 200;
+        else if (type == 3)
+            goal = 800;
         healer = healpref;
     }
 
@@ -55,6 +58,10 @@ public class SpawnScript : MonoBehaviour
         else if (type == 2)
         {
             Instantiate(heal, shotpoint.position, shotpoint.rotation);
+        }
+        else if (type == 3)
+        {
+            Instantiate(mitos, shotpoint.position, shotpoint.rotation);
         }
     }
     public static void doHeal(Vector3 enem)

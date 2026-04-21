@@ -51,6 +51,10 @@ public class EnemyScr : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            if (other.CompareTag("Mitosis"))
+            {
+                Destroy(gameObject);
+            }
             if (other.CompareTag("PBug"))
             {
                 Destroy(gameObject);
