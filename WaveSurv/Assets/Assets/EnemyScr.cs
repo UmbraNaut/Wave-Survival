@@ -55,6 +55,10 @@ public class EnemyScr : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            if (other.CompareTag("Boomerang"))
+            {
+                Destroy(gameObject);
+            }
             if (other.CompareTag("PBug"))
             {
                 Destroy(gameObject);

@@ -10,9 +10,20 @@ public class MitosiScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.Rotate(Vector3.back, 15);
-        Vector3 rotate = transform.rotation.eulerAngles;
-        r = (rotate.z * Mathf.Deg2Rad);
+        Vector3 thispos = transform.position;
+        Vector3 rotate;
+        Vector3 pbpos = SpawnScript.targetTransform.position;
+        float pseudodist = Mathf.Abs(thispos.x - pbpos.x) + Mathf.Abs(thispos.y - pbpos.y);
+        if (pseudodist > 3)
+        {
+            transform.Rotate(Vector3.back, 15);
+            rotate = transform.rotation.eulerAngles;
+        }
+        else
+        {
+            rotate.z = Movement.myr;
+        }
+            r = (rotate.z * Mathf.Deg2Rad);
     }
 
     // Update is called once per frame
@@ -35,17 +46,6 @@ public class MitosiScript : MonoBehaviour
             transform.Rotate(Vector3.forward, 15);
             r += Mathf.PI / 12;
             coutner = 0;
-        }
-    }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("PBug"))
-        {
-            r = Movement.myr * Mathf.Deg2Rad;
-            Vector3 setrot = transform.rotation.eulerAngles;
-            setrot.z = Movement.myr;
-            Quaternion newone = Quaternion.Euler(0f, 0f, setrot.z);
-            transform.rotation = newone;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

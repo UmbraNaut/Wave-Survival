@@ -9,14 +9,19 @@ public class SpawnScript : MonoBehaviour
     public GameObject mine;
     public GameObject heal;
     public GameObject mitos;
+    public GameObject boomer;
     [SerializeField] private GameObject healpref;
     public static GameObject healer;
     public Transform shotpoint;
     private float coneter = 0;
     public static int deathcounter = 0;
     public static int healcount = 0;
-    private int type = 3;
-    private int goal = 400;
+    private int type = 4;
+    private float goal = 400;
+    public static Transform shotPoint2;
+    public static Transform targetTransform;
+    private GameObject targetObject;
+    public static bool retrieval = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -31,19 +36,42 @@ public class SpawnScript : MonoBehaviour
             goal = 200;
         else if (type == 3)
             goal = 800;
+        else if (type == 4)
+        {
+            retrieval = true;
+            goal = Mathf.Infinity;
+        }
         healer = healpref;
+        try
+        {
+            // Ensure the tag exists and is assigned in the Tag Manager
+            targetObject = GameObject.FindWithTag("PBug");
+
+            if (targetObject != null)
+            {
+                targetTransform = targetObject.transform;
+            }
+            else
+            {
+            }
+        }
+        catch (UnityException e)
+        {
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+        // Update is called once per frame
+        void Update()
     {
-        if (Keyboard.current.spaceKey.isPressed && coneter > goal)
+        if (Keyboard.current.spaceKey.isPressed && (coneter > goal || retrieval))
         {
             GetFunction();
             coneter = 0;
         }
         coneter++;
         coneter += Time.deltaTime;
+        targetTransform = targetObject.transform;
     }
     void GetFunction()
     {
@@ -62,6 +90,10 @@ public class SpawnScript : MonoBehaviour
         else if (type == 3)
         {
             Instantiate(mitos, shotpoint.position, shotpoint.rotation);
+        }
+        else if (type == 4)
+        {
+            Instantiate(boomer, shotpoint.position, shotpoint.rotation);
         }
     }
     public static void doHeal(Vector3 enem)

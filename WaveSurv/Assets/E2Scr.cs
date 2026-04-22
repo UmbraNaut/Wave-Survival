@@ -77,7 +77,7 @@ public class E2Scr : MonoBehaviour
             SpawnScript.deathcounter++;
             Destroy(gameObject);
         }
-        if (other.CompareTag("kct") || other.CompareTag("Heal") || other.CompareTag("Mine") || other.CompareTag("Mitosis"))
+        if (other.CompareTag("kct") || other.CompareTag("Heal") || other.CompareTag("Mine") || other.CompareTag("Mitosis") || other.CompareTag("Boomerang"))
         {
             Instantiate(E1, transform.position, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);

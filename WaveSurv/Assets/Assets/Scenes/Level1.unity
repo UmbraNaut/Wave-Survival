@@ -1425,6 +1425,7 @@ MonoBehaviour:
   mine: {fileID: 3042574128426232790, guid: 7c6574ac48a3d64488dfe52f8843acdc, type: 3}
   heal: {fileID: 9152795174561563556, guid: 67e764fe8786ae445af6c5f1390bee2c, type: 3}
   mitos: {fileID: 2728080949040821569, guid: 96760a6332bf09843af5bb42fd2c48d0, type: 3}
+  boomer: {fileID: 967486076381725955, guid: 339dd7f46d71a86408d57c684caa5544, type: 3}
   healpref: {fileID: 3889098947354096310, guid: b8dfbbbadce17764bb21375fdfe33e16, type: 3}
   shotpoint: {fileID: 495064887}
 --- !u!4 &1249410406

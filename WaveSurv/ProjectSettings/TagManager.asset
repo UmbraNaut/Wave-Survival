@@ -16,6 +16,7 @@ TagManager:
   - Healer
   - EB
   - Mitosis
+  - Boomerang
   layers:
   - Default
   - TransparentFX
