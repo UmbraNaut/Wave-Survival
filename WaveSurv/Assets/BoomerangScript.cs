@@ -53,6 +53,7 @@ public class BoomerangScript : MonoBehaviour
         transform.position = ne;
         if (Mathf.Sqrt((transform.position.x * transform.position.x) + (transform.position.y * transform.position.y)) > 67)
         {
+            SpawnScript.retrieval = true;
             Destroy(gameObject);
         }
         transform.Rotate(Vector3.forward * Time.deltaTime * 720);

@@ -38,9 +38,8 @@ public class E2Scr : MonoBehaviour
         position.y = position.y - ychange * Time.deltaTime;
         transform.position = position;
         transform.rotation = Quaternion.Euler(0, 0, r);
-        counter++;
         counter += Time.deltaTime;
-        if (counter > 1000)
+        if (counter > 3)
         {
             Instantiate(EBullet, transform.position, transform.rotation);
             counter = 0;
@@ -77,7 +76,7 @@ public class E2Scr : MonoBehaviour
             SpawnScript.deathcounter++;
             Destroy(gameObject);
         }
-        if (other.CompareTag("kct") || other.CompareTag("Heal") || other.CompareTag("Mine") || other.CompareTag("Mitosis") || other.CompareTag("Boomerang"))
+        if (other.CompareTag("kct") || other.CompareTag("Heal") || other.CompareTag("Mine") || other.CompareTag("Mitosis") || other.CompareTag("Boomerang") || other.CompareTag("Burst"))
         {
             Instantiate(E1, transform.position, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);

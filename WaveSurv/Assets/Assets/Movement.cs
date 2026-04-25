@@ -114,8 +114,7 @@ public class Movement : MonoBehaviour
         }
         if (cont2 > 0)
         {
-            cont2--;
-            cont2 -= Time.deltaTime;
+            cont2 -= Time.deltaTime*60;
         }
         if (Mathf.Sqrt(Mathf.Pow(transform.position.x, 2) + Mathf.Pow(transform.position.y, 2)) >= 64.6)
         {
@@ -143,8 +142,7 @@ public class Movement : MonoBehaviour
     {
         if (myv != 0.0f || myf != 0.0f)
         {
-            counter++;
-            counter += Time.deltaTime;
+            counter += Time.deltaTime * 150;
             if (counter / 120 > 1)
             {
                 sprender.sprite = sprArray[0];

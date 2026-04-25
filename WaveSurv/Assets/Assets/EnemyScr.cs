@@ -7,7 +7,7 @@ public class EnemyScr : MonoBehaviour
     private float hyp;
     private float xchange;
     private float ychange;
-    private int shield = 12;
+    private float shield = 12;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +23,9 @@ public class EnemyScr : MonoBehaviour
         position.y = position.y - ychange * Time.deltaTime;
         transform.position = position;
         if (shield > 0)
-        shield--;
+        {
+            shield -= Time.deltaTime * 24;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -47,15 +49,15 @@ public class EnemyScr : MonoBehaviour
                 SpawnScript.doHeal(transform.position);
                 Destroy(gameObject);
             }
-            if (other.CompareTag("EB"))
-            {
-                Destroy(gameObject);
-            }
             if (other.CompareTag("Mitosis"))
             {
                 Destroy(gameObject);
             }
             if (other.CompareTag("Boomerang"))
+            {
+                Destroy(gameObject);
+            }
+            if (other.CompareTag("Burst"))
             {
                 Destroy(gameObject);
             }

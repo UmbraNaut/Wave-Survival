@@ -70,11 +70,7 @@ public class SentScr : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.CompareTag("EB"))
-        {
-            Destroy(gameObject);
-        }
-        if (other.CompareTag("kct") || other.CompareTag("Heal") || other.CompareTag("Mine") || other.CompareTag("Mitosis") || other.CompareTag("Boomerang"))
+        if (other.CompareTag("kct") || other.CompareTag("Heal") || other.CompareTag("Mine") || other.CompareTag("Mitosis") || other.CompareTag("Boomerang") || other.CompareTag("Burst"))
         {
             Destroy(gameObject);
         }

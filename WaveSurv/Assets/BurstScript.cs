@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class EBS : MonoBehaviour
+public class BurstScript : MonoBehaviour
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private float r = 0;
+    private int lifespan = 1;
+    private float cou = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Vector3 rot = transform.rotation.eulerAngles;
         rot.z += 90;
-        transform.rotation = Quaternion.Euler(rot.x,rot.y, rot.z);
+        transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
         r = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
     }
 
@@ -25,14 +28,27 @@ public class EBS : MonoBehaviour
         ne.x += Time.deltaTime * h * 25;
         ne.y += Time.deltaTime * v * 25;
         transform.position = ne;
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("CenterX"))
+        cou += Time.deltaTime * 3;
+        if (cou >= lifespan)
         {
             Destroy(gameObject);
         }
-        if (other.CompareTag("PBug"))
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("E1"))
+        {
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("E2"))
+        {
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Sent"))
+        {
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("CenterX"))
         {
             Destroy(gameObject);
         }
